@@ -104,7 +104,7 @@ window.PROJECTS = {
    "Gurus": {
     title: "Garbage Gurus",
     tagline: "Junk removal business",
-    thumbnail: "", // leave blank to auto-generate a placeholder
+    thumbnail: "images/Gurus.jpg", // leave blank to auto-generate a placeholder
     accent: "#d68a27",
     status: "complete",
     year: 2022,
