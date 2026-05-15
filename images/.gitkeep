@@ -1,3 +1,4 @@
 Drop project thumbnail images here (jpg, png, webp, svg).
 Reference them in data/projects.js like: thumbnail: "images/my-project.jpg"
 ![Lyla](Lyla.png)
+![alt text](Deuce.JPG)

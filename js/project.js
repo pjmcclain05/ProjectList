@@ -84,6 +84,11 @@
     });
 
     var meta = el("div", { class: "project-meta" });
+    if (project.status === "ongoing") {
+      meta.appendChild(el("span", { class: "pill-ongoing", text: "Ongoing" }));
+    } else if (project.status === "complete") {
+      meta.appendChild(el("span", { class: "pill-complete", text: "Complete" }));
+    }
     if (project.year) {
       meta.appendChild(el("span", { class: "pill", text: String(project.year) }));
     }
@@ -147,6 +152,32 @@
       })
     );
     if (hasLinks) root.appendChild(links);
+
+    var downloadList = project.downloads || [];
+    if (downloadList.length) {
+      var dlSection = el("div", { class: "project-downloads" });
+      dlSection.appendChild(el("h3", { class: "downloads-title", text: "Downloads" }));
+      var dlButtons = el("div", { class: "project-links" });
+      downloadList.forEach(function (item) {
+        if (!item.file && !item.url) return;
+        var href = item.file || item.url;
+        var isExternal = !item.file;
+        var attrs = {
+          class: "btn btn-download",
+          href: href,
+          text: item.label || "Download",
+        };
+        if (item.file) {
+          attrs.download = "";
+        } else {
+          attrs.target = "_blank";
+          attrs.rel = "noopener noreferrer";
+        }
+        dlButtons.appendChild(el("a", attrs));
+      });
+      dlSection.appendChild(dlButtons);
+      root.appendChild(dlSection);
+    }
   }
 
   document.addEventListener("DOMContentLoaded", function () {

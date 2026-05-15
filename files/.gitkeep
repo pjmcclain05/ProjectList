@@ -1,0 +1,10 @@
+Drop downloadable files here (PDFs, CAD files, ZIPs, etc.).
+Reference them in data/projects.js like:
+  downloads: [
+    { label: "Download PDF", file: "files/my-file.pdf" },
+  ]
+
+Put your resume here as:  files/resume.pdf
+Then set  resumeFile: "files/resume.pdf"  in SITE.hero inside data/projects.js.
+
+files/resume.pdf

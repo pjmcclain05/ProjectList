@@ -80,6 +80,17 @@
     } else {
       ctaEl.style.display = "none";
     }
+
+    if (hero.resumeFile) {
+      var actionsEl = document.querySelector(".hero-actions");
+      var resumeBtn = el("a", {
+        class: "btn btn-download",
+        href: hero.resumeFile,
+        download: "",
+        text: hero.resumeLabel || "Download Resume",
+      });
+      actionsEl.appendChild(resumeBtn);
+    }
   }
 
   function renderCard(projectId) {
