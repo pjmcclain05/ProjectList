@@ -46,6 +46,13 @@
  *   - Add  status: "ongoing"   for a green "Ongoing" pill
  *   - Add  status: "complete"  for a blue "Complete" pill
  *   - Omit the field entirely to show no status pill
+ *
+ * autoFill tip:
+ *   - Instead of listing projectIds manually, a section can auto-populate:
+ *       { id: "ongoing", title: "Ongoing", autoFill: "ongoing" }
+ *   - This pulls in every project whose status matches the autoFill value.
+ *   - You can combine both: list specific projectIds AND set autoFill to
+ *     prepend hand-picked projects before the auto-filled ones.
  * ============================================================ */
 
 window.SITE = {
@@ -148,6 +155,11 @@ window.SECTIONS = [
     id: "featured",
     title: "Featured",
     projectIds: ["Lyla", "Deuce"],
+  },
+  {
+    id: "ongoing",
+    title: "Ongoing",
+    autoFill: "ongoing", // auto-populated — no need to list projectIds
   },
   {
     id: "Startups",

@@ -163,9 +163,20 @@
   function renderSections() {
     var root = document.getElementById("sections");
     (window.SECTIONS || []).forEach(function (section) {
-      // Skip empty sections silently
-      if (!section.projectIds || section.projectIds.length === 0) return;
-      root.appendChild(renderRow(section));
+      var ids = section.projectIds ? section.projectIds.slice() : [];
+
+      // autoFill: automatically include all projects with a matching status
+      if (section.autoFill) {
+        Object.keys(window.PROJECTS || {}).forEach(function (pid) {
+          if (window.PROJECTS[pid].status === section.autoFill &&
+              ids.indexOf(pid) === -1) {
+            ids.push(pid);
+          }
+        });
+      }
+
+      if (ids.length === 0) return;
+      root.appendChild(renderRow({ id: section.id, title: section.title, projectIds: ids }));
     });
   }
 
