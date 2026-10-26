@@ -180,7 +180,7 @@ window.PROJECTS = {
     links: { 
     },
     downloads: [
-    { label: "Download Manuscript", file: "files/LMIT.dox" },
+    { label: "Download Manuscript", file: "files/LMIT.pdf" },
      ]
     
   },
