@@ -175,6 +175,16 @@
         });
       }
 
+      // autoFillYear: automatically include all projects with a matching year
+      if (section.autoFillYear != null) {
+        Object.keys(window.PROJECTS || {}).forEach(function (pid) {
+          if (window.PROJECTS[pid].year === section.autoFillYear &&
+              ids.indexOf(pid) === -1) {
+            ids.push(pid);
+          }
+        });
+      }
+
       if (ids.length === 0) return;
       root.appendChild(renderRow({ id: section.id, title: section.title, projectIds: ids }));
     });
