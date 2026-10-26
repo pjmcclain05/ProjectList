@@ -53,6 +53,10 @@
  *   - This pulls in every project whose status matches the autoFill value.
  *   - You can combine both: list specific projectIds AND set autoFill to
  *     prepend hand-picked projects before the auto-filled ones.
+ *
+ * autoFillYear tip:
+ *   - Group projects by year without listing ids manually:
+ *       { id: "year-2026", title: "2026", autoFillYear: 2026 }
  * ============================================================ */
 
 window.SITE = {
@@ -135,7 +139,7 @@ window.PROJECTS = {
     tagline: "Research Paper",
     thumbnail: "", // leave blank to auto-generate a placeholder
     accent: "#58c7cf",
-    status: "ongoing",
+    status: "complete",
     year: 2026,
     tech: ["Latex"],
     description:
@@ -148,13 +152,64 @@ window.PROJECTS = {
     
   },
 
+  "Plata Lab": {
+    title: "Cutinase Adsorption to Polyester Surfaces",
+    tagline: "MIT Plata Lab research",
+    thumbnail: "images/PlataLab.png", // leave blank to auto-generate a placeholder
+    accent: "#58c7cf",
+    status: "complete",
+    year: 2025,
+    tech: ["TOC", "LCMS", "Polymer Chemistry", "Experimental Design", "Data Analysis"],
+    description:
+      "I worked on this paper as part of my internship at the Plata Lab at MIT. I spent the summer of 2025 studying the adsorption of cutinase to polyester surfaces.",
+    links: {
+      live: { label: "View Manuscript", url: "https://pubs.acs.org/bomaf6/article/27/9/5908/5202251/Cutinase-Adsorption-to-Polyester-Surfaces" }
+    },
+  },
+
+  "LemelsonMIT": {
+    title: "Advancing K-14 Invention Education Pathways: Insights from Regional Partners and Collaborators",
+    tagline: "Lemelson MIT Qualitative Research Paper",
+    thumbnail: "images/LMIT.png", // leave blank to auto-generate a placeholder
+    accent: "#58c7cf",
+    status: "complete",
+    year: 2026,
+    tech: ["Doodose", "Qualitative Research", "Technical Writing"],
+    description:
+      "Working with the Lemelson MIT team in the summer of 2026, I conducted qualitative research with local schools to understand their needs and challenges in advancing invention education pathways.",
+    links: { 
+    },
+    downloads: [
+    { label: "Download Manuscript", file: "files/LMIT.dox" },
+     ]
+    
+  },
+
+  "Purpouse of Education": {
+    title: "My Views on the Purpouse of Education",
+    tagline: "Class Paper",
+    thumbnail: "images/School.png", // leave blank to auto-generate a placeholder
+    accent: "#58c7cf",
+    status: "ongoing",
+    year: 2026,
+    tech: [],
+    description:
+       "This paper was written as a part of a class on the purpose of education. I explored my own views on the purpose of education and how it has changed over time. The paper is not only a commentary on the education system but also a reflection of my character and what I believe is important.",
+    links: { 
+    },
+    downloads: [
+    { label: "Download Paper", file: "files/EducationalDesignPaper.pdf" },
+     ]
+    
+  },
+
 };
 
 window.SECTIONS = [
   {
     id: "featured",
     title: "Featured",
-    projectIds: ["Lyla", "Deuce"],
+    projectIds: ["Plata Lab", "Lyla", "Deuce", "LemelsonMIT"],
   },
   {
     id: "ongoing",
@@ -169,7 +224,7 @@ window.SECTIONS = [
   {
     id: "Papers",
     title: "Papers",
-    projectIds: ["AIGrading"],
+    projectIds: ["AIGrading", "Plata Lab", "LemelsonMIT", "Purpouse of Education"],
   },
   {
     id: "Apps",
@@ -180,5 +235,25 @@ window.SECTIONS = [
     id: "Music",
     title: "Music",
     projectIds: ["Deuce"],
+  },
+  {
+    id: "year-2026",
+    title: "2026",
+    autoFillYear: 2026,
+  },
+  {
+    id: "year-2025",
+    title: "2025",
+    autoFillYear: 2025,
+  },
+  {
+    id: "year-2024",
+    title: "2024",
+    autoFillYear: 2024,
+  },
+  {
+    id: "year-2022",
+    title: "2022",
+    autoFillYear: 2022,
   },
 ];
